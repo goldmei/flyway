@@ -1,0 +1,1 @@
+INSERT INTO `order` VALUES (1, 1, 1, 1, 1);

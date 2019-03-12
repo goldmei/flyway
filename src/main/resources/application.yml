@@ -1,0 +1,24 @@
+server:
+  port: 18080
+
+mybatis.config-locations:classpath: mybatis/mybatis-config.xml
+mybatis.mapper-locations:classpath: mybatis/mapper/*.xml
+mybatis.type-aliases-package: com.neo.entity
+
+spring.datasource.driverClassName : com.mysql.jdbc.Driver
+spring.datasource.url : jdbc:mysql://127.0.0.1:3307/flyway?useLegacyDatetimeCode=false&serverTimezone=Asia/Hong_Kong&useSSL=false
+spring.datasource.username : root
+spring.datasource.password : 12345
+
+# 数据库版本控制
+flyway:
+  enabled: true
+  # 若连接的数据库非空库，是否初始化（若不开启baseline-on-migrate，在连接的数据库为非空库时，程序会报错）
+  baseline-on-migrate: true
+  # 是否开启校验（若开启校验，flyway在启动校验失败时会清空数据库中的表和删除表结构）
+  validate-on-migrate: false
+  # 默认脚本加载路径：/db/migration
+  # locations=classpath:/db/migration
+  # 若执行sql脚本失败，flyway会记录失败信息到flyway_schema_history表，并且下次重新启动flyway前必须先删掉失败信息，否则会报错
+
+
